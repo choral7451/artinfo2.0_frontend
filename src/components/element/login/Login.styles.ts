@@ -2,8 +2,13 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 20%;
+
   @media (max-width: 575.98px) {
     width: 80%;
+  }
+
+  @media (min-width: 575.98px) and (max-width: 991.98px) {
+    width: 50%;
   }
 `;
 
@@ -41,8 +46,12 @@ export const Input = styled.input`
   :focus {
     outline: none;
   }
+  :focus::placeholder {
+    color: transparent;
+  }
   ::placeholder {
     color: #a1b4cf;
+    transition: all 0.3s ease-in-out;
   }
 `;
 

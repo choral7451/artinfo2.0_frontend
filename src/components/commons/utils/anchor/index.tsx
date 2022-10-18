@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 export interface IAnchorProps {
   text: string;
   push: string;
+  fontSize?: string;
   justifyContent?: string;
   alignItems?: string;
   width?: number;
-  color?: string;
+  color?: { from?: string; to?: string };
   margin?: string;
   padding?: string;
 }
@@ -19,6 +20,7 @@ export default function AnchorComponent(props: IAnchorProps) {
     text,
     justifyContent,
     alignItems,
+    fontSize,
     width,
     color,
     margin,
@@ -30,12 +32,13 @@ export default function AnchorComponent(props: IAnchorProps) {
     display: flex;
     justify-content: ${justifyContent};
     align-items: ${alignItems};
+    font-size: ${fontSize};
     width: ${width};
-    color: ${color};
+    color: ${color?.from};
     padding: ${padding};
     margin: ${margin};
-    :active {
-      color: ${color};
+    :hover {
+      color: ${color?.to};
       font-weight: bold;
     }
   `;

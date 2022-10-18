@@ -1,6 +1,7 @@
 import * as S from "./Header.styles";
 import { IHeaderUI } from "./Header.types";
 import ButtonComponent from "../../utils/buttons";
+import AnchorComponent from "../../utils/anchor";
 
 export default function HeaderUI(props: IHeaderUI) {
   const { onClickPush, btnValue } = props;
@@ -37,11 +38,41 @@ export default function HeaderUI(props: IHeaderUI) {
           <S.Logo onClick={onClickPush("/")}>ARTINFO</S.Logo>
           <S.LoginUserInconForMobile />
           <S.Nav>
-            <S.NavBtn onClick={onClickPush("/courses")}>채용</S.NavBtn>
-            <S.NavBtn onClick={onClickPush("/courses")}>나눔</S.NavBtn>
-            <S.NavBtn onClick={onClickPush("/courses")}>공연</S.NavBtn>
-            <S.NavBtn onClick={onClickPush("/scores")}>교육</S.NavBtn>
-            <S.NavBtn onClick={onClickPush("/notice")}>공지</S.NavBtn>
+            <AnchorComponent
+              text="채용"
+              push="/recruit"
+              fontSize="20px"
+              padding="0 20px 0 20px"
+              color={{ from: "black", to: "#427ed1" }}
+            />
+            <AnchorComponent
+              text="나눔"
+              push="/share"
+              fontSize="20px"
+              padding="0 20px 0 20px"
+              color={{ from: "black", to: "#427ed1" }}
+            />
+            <AnchorComponent
+              text="공연"
+              push="/concert"
+              fontSize="20px"
+              padding="0 20px 0 20px"
+              color={{ from: "black", to: "#427ed1" }}
+            />
+            <AnchorComponent
+              text="교육"
+              push="/education"
+              fontSize="20px"
+              padding="0 20px 0 20px"
+              color={{ from: "black", to: "#427ed1" }}
+            />
+            <AnchorComponent
+              text="공지"
+              push="/notice"
+              fontSize="20px"
+              padding="0 20px 0 20px"
+              color={{ from: "black", to: "#427ed1" }}
+            />
           </S.Nav>
         </S.HeaderMidContents>
       </S.HeaderMid>

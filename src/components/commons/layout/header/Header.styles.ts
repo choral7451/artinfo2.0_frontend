@@ -15,7 +15,8 @@ export const HeaderTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 575.98px) {
+
+  @media (max-width: 991.98px) {
     display: none;
   }
 `;
@@ -103,7 +104,8 @@ export const HeaderMid = styled.div`
   justify-content: center;
   border-top: 1px solid #a1b4cf;
   border-bottom: 1px solid #a1b4cf;
-  @media (max-width: 575.98px) {
+
+  @media (max-width: 991.98px) {
     padding: 30px 0;
     border-top: none;
     border-bottom: none;
@@ -115,7 +117,8 @@ export const HeaderMidContents = styled.div`
   align-items: center;
   height: 100%;
   width: 65%;
-  @media (max-width: 575.98px) {
+
+  @media (max-width: 991.98px) {
     width: 100%;
   }
 `;
@@ -123,7 +126,7 @@ export const HeaderMidContents = styled.div`
 export const Menu = styled(MenuOutlined)`
   display: none;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 991.98px) {
     display: initial;
     font-size: 26px;
     width: 25%;
@@ -142,7 +145,7 @@ export const Logo = styled.div`
   font-size: 40px;
   height: fit-content;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 991.98px) {
     display: flex;
     justify-content: center;
     width: 50%;
@@ -157,7 +160,7 @@ export const Logo = styled.div`
 export const LoginUserInconForMobile = styled(UserOutlined)`
   display: none;
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 991.98px) {
     display: initial;
     font-size: 26px;
     width: 25%;
@@ -176,7 +179,8 @@ export const Nav = styled.div`
   font-weight: bold;
   padding: 0 20px;
   width: 100%;
-  @media (max-width: 768px) {
+
+  @media (max-width: 991.98px) {
     display: none;
   }
 `;

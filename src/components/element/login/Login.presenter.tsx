@@ -18,7 +18,7 @@ export default function LoginPresenter() {
           text="비밀번호 찾기"
           push="/findPassword"
           justifyContent="flex-end"
-          color="#427ed1"
+          color={{ from: "#427ed1" }}
           padding="0 0 20px 0"
         />
         <ButtonComponent
