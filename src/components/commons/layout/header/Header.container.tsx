@@ -6,6 +6,7 @@ import { AccessTokenState } from "../../../../commons/store";
 
 import HeaderUI from "./Header.presenter";
 import { MUTATION_LOGOUT } from "./Header.queries";
+import theme from "../../../../../styles/theme";
 
 export default function Header() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function Header() {
     login: {
       text: "로그인",
       push: "/login",
-      backgourndColor: { from: "white", to: "#427ed1" },
+      backgourndColor: { from: "white", to: theme.colors.primary },
       color: { from: "black", to: "white" },
       margin: { up: "0", right: "15px", down: "0", left: "15px" },
       padding: { up: "6px", right: "20px", down: "6px", left: "20px" },
@@ -25,7 +26,7 @@ export default function Header() {
     signup: {
       text: "회원가입",
       push: "/signup",
-      backgourndColor: { from: "#427ed1", to: "white" },
+      backgourndColor: { from: theme.colors.primary, to: "white" },
       color: { from: "white", to: "black" },
       margin: { up: "0", right: "15px", down: "0", left: "15px" },
       padding: { up: "6px", right: "20px", down: "6px", left: "20px" },

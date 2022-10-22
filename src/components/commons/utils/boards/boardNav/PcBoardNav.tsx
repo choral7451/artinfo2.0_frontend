@@ -3,12 +3,13 @@ import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import theme from "../../../../../../styles/theme";
 
 interface IBoardNav {
   nav: string[];
 }
 
-export default function BoardNav(props: IBoardNav) {
+export default function PcBoardNav(props: IBoardNav) {
   const [navIdx, setNavIdx] = useState(0);
   const [move, setMove] = useState(0);
   const [toMove, setToMove] = useState(0);
@@ -19,7 +20,10 @@ export default function BoardNav(props: IBoardNav) {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 300px;
+    padding-bottom: 40px;
+    @media (max-width: 575.98px) {
+      display: none;
+    }
   `;
 
   const Arrow = styled.div`
@@ -54,7 +58,7 @@ export default function BoardNav(props: IBoardNav) {
     position: relative;
     display: flex;
     width: fit-content;
-    border-bottom: 1px solid #427ed1;
+    border-bottom: 1px solid #a1b4cf;
     background-color: white;
     animation: ${Right} 1s 1 forwards;
   `;
@@ -67,9 +71,10 @@ export default function BoardNav(props: IBoardNav) {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: ${theme.colors.primary};
     :hover {
       color: white;
-      background-color: #427ed1;
+      background-color: ${theme.colors.primary};
       transition: all 0.2s ease-in-out;
     }
   `;

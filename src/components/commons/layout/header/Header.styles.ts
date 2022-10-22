@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { SettingOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 import { keyframes } from "@emotion/react";
+import theme from "../../../../../styles/theme";
 
 export const Header = styled.div`
   width: 100vw;
@@ -102,8 +103,8 @@ export const HeaderMid = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #a1b4cf;
-  border-bottom: 1px solid #a1b4cf;
+  border-top: 1px solid ${theme.colors.primary};
+  border-bottom: 1px solid ${theme.colors.primary};
 
   @media (max-width: 991.98px) {
     padding: 30px 0;

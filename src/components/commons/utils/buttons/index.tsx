@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
+import theme from "../../../../../styles/theme";
 
 export interface IButtonProps {
   text: string;
@@ -38,8 +39,8 @@ export default function ButtonComponent(props: IButtonProps) {
     cursor: pointer;
     font-weight: bold;
     font-size: ${fontSize};
-    border-radius: 10px;
-    border: 1px solid #427ed1;
+    border-radius: 5px;
+    border: 1px solid ${theme.colors.primary};
     color: ${color?.from};
     width: ${width}%;
     background-color: ${backgourndColor?.from};
