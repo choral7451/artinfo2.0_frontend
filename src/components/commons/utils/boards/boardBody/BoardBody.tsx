@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 import { v4 as uuidv4 } from "uuid";
 import Search from "../../search/Search";
 import theme from "../../../../../../styles/theme";
-import MobileBoardNav from "../boardNav/MobileBoardNav";
+import Select from "../../select/Select";
 import ButtonComponent from "../../buttons";
 
 interface IBoardBody {}
 interface IHeaderColumn {
   width: { mobile?: string; pc: string };
-  mobileDisplay: string;
+  mobileDisplay?: string;
   text: string;
 }
 interface IBodyColumn {
@@ -56,14 +56,15 @@ const BoardUntilWrapper = styled.div`
 `;
 
 const BoardUntilWrapperForMobile = styled.div`
+  height: 40px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  background-color: beige;
+
   @media (max-width: 575.98px) {
     margin-top: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 `;
 
@@ -205,12 +206,15 @@ function BoardBody(props: IBoardBody) {
       <BoardUntilWrapper>
         <Search />
         <BoardUntilWrapperForMobile>
-          <MobileBoardNav />
+          <Select elementArr={["전체", "예술단체", "종교", "기타"]} />
           <ButtonComponent
             text={"글쓰기"}
-            padding={{ up: "5px", right: "30px", down: "5px", left: "30px" }}
+            width={"100px"}
+            padding={{ up: "0", right: "0", down: "0", left: "0" }}
             color={{ from: "white" }}
+            fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary }}
+            height={"100%"}
           />
         </BoardUntilWrapperForMobile>
       </BoardUntilWrapper>

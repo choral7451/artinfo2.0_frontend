@@ -9,11 +9,12 @@ export interface IButtonProps {
     from: string;
     to?: string;
   };
+  width?: string;
+  height?: string;
   backgourndColor?: {
     from: string;
     to?: string;
   };
-  width?: number;
   padding?: {
     up: string;
     right: string;
@@ -32,17 +33,20 @@ export interface IButtonProps {
 export default function ButtonComponent(props: IButtonProps) {
   const router = useRouter();
 
-  const { color, padding, margin, backgourndColor, width, fontSize } = props;
+  const { color, padding, margin, backgourndColor, fontSize, height, width } =
+    props;
+
   const Button = styled.button`
     padding: ${padding?.up} ${padding?.right} ${padding?.down} ${padding?.left};
     margin: ${margin?.up} ${margin?.right} ${margin?.down} ${margin?.left};
+    height: ${height};
     cursor: pointer;
     font-weight: bold;
     font-size: ${fontSize};
     border-radius: 5px;
     border: 1px solid ${theme.colors.primary};
     color: ${color?.from};
-    width: ${width}%;
+    width: ${width};
     background-color: ${backgourndColor?.from};
     :hover {
       background-color: ${backgourndColor?.to};

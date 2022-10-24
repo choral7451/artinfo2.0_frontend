@@ -9,7 +9,7 @@ interface IBoardNav {
   nav: string[];
 }
 
-export default function PcBoardNav(props: IBoardNav) {
+export default function BoardNav(props: IBoardNav) {
   const [navIdx, setNavIdx] = useState(0);
   const [move, setMove] = useState(0);
   const [toMove, setToMove] = useState(0);
