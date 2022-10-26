@@ -2,6 +2,7 @@ import { from } from "@apollo/client";
 import AnchorComponent from "../../commons/utils/anchor";
 import ButtonComponent from "../../commons/utils/buttons";
 import * as S from "./Login.styles";
+import theme from "../../../../styles/theme";
 
 export default function LoginPresenter() {
   return (
@@ -18,14 +19,14 @@ export default function LoginPresenter() {
           text="비밀번호 찾기"
           push="/findPassword"
           justifyContent="flex-end"
-          color={{ from: "#427ed1" }}
+          color={{ from: theme.colors.primary }}
           padding="0 0 20px 0"
         />
         <ButtonComponent
           text="로그인"
-          width={100}
+          width={{ from: "100%" }}
           color={{ from: "white", to: "black" }}
-          backgourndColor={{ from: "#427ed1", to: "white" }}
+          backgourndColor={{ from: theme.colors.primary, to: "white" }}
           padding={{ up: "10px", right: "0", down: "10px", left: "0" }}
           fontSize="16px"
         />

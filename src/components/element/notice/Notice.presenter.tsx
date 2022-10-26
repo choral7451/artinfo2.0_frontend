@@ -1,19 +1,20 @@
-import * as S from "./Recruit.styles";
+import React from "react";
+import * as S from "../recruit/Recruit.styles";
 import BoardNav from "../../commons/utils/boards/boardNav/BoardNav";
-import { recruitBodyData, recruitHeaderData } from "./Recruit.setting";
 import BoardBody from "../../commons/utils/boards/boardBody/BoardBody";
+import { recruitBodyData, recruitHeaderData } from "./Notice.setting";
 import ButtonComponent from "../../commons/utils/buttons";
 import theme from "../../../../styles/theme";
 
-export default function RecruitPresenter() {
+function NoticePresenter() {
   return (
     <S.Wrapper>
-      <S.Title>채용</S.Title>
-      <BoardNav nav={["전체", "예술단체", "종교", "기타"]} />
+      <S.Title>공지</S.Title>
       <BoardBody
         headerData={recruitHeaderData}
         bodyData={recruitBodyData}
-        search={"flex"}
+        write={"none"}
+        search={"none"}
       />
       <ButtonComponent
         text={"더보기"}
@@ -26,3 +27,5 @@ export default function RecruitPresenter() {
     </S.Wrapper>
   );
 }
+
+export default NoticePresenter;

@@ -1,15 +1,16 @@
-import * as S from "./Recruit.styles";
+import React from "react";
+import * as S from "../recruit/Recruit.styles";
 import BoardNav from "../../commons/utils/boards/boardNav/BoardNav";
-import { recruitBodyData, recruitHeaderData } from "./Recruit.setting";
 import BoardBody from "../../commons/utils/boards/boardBody/BoardBody";
+import { recruitBodyData, recruitHeaderData } from "../share/Share.setting";
 import ButtonComponent from "../../commons/utils/buttons";
 import theme from "../../../../styles/theme";
 
-export default function RecruitPresenter() {
+function EducationPresenter(props) {
   return (
     <S.Wrapper>
-      <S.Title>채용</S.Title>
-      <BoardNav nav={["전체", "예술단체", "종교", "기타"]} />
+      <S.Title>교육</S.Title>
+      <BoardNav nav={["전체", "이슈", "후기", "자유게시판"]} />
       <BoardBody
         headerData={recruitHeaderData}
         bodyData={recruitBodyData}
@@ -26,3 +27,5 @@ export default function RecruitPresenter() {
     </S.Wrapper>
   );
 }
+
+export default EducationPresenter;

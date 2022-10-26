@@ -10,7 +10,6 @@ interface IBoardNav {
 }
 
 export default function BoardNav(props: IBoardNav) {
-  const [navIdx, setNavIdx] = useState(0);
   const [move, setMove] = useState(0);
   const [toMove, setToMove] = useState(0);
 
@@ -33,12 +32,12 @@ export default function BoardNav(props: IBoardNav) {
     position: relative;
     top: 60px;
     font-size: 20px;
-    width: 180px;
+    width: 150px;
   `;
 
   const Frame = styled.div`
     height: 60px;
-    width: 200px;
+    width: 150px;
     overflow: hidden;
     cursor: pointer;
     :hover {
@@ -54,7 +53,6 @@ export default function BoardNav(props: IBoardNav) {
 
   const NavAll = styled.div`
     height: 60px;
-    right: 0;
     position: relative;
     display: flex;
     width: fit-content;
@@ -67,7 +65,7 @@ export default function BoardNav(props: IBoardNav) {
     font-size: 26px;
     font-weight: bold;
     height: 100%;
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +79,7 @@ export default function BoardNav(props: IBoardNav) {
 
   const onClickNav = (right: number) => () => {
     setMove(toMove);
-    setToMove(-(navIdx - right) * 200);
+    setToMove(right * 150);
   };
 
   const navArr = props.nav?.map((el, idx) => {

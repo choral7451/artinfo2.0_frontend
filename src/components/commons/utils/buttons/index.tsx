@@ -3,29 +3,33 @@ import { useRouter } from "next/router";
 import theme from "../../../../../styles/theme";
 
 export interface IButtonProps {
+  display: string;
   text: string;
   push?: string;
   color?: {
     from: string;
     to?: string;
   };
-  width?: string;
+  width?: {
+    from?: string;
+    to?: string;
+  };
   height?: string;
   backgourndColor?: {
     from: string;
     to?: string;
   };
   padding?: {
-    up: string;
-    right: string;
-    down: string;
-    left: string;
+    up?: string;
+    right?: string;
+    down?: string;
+    left?: string;
   };
   margin?: {
-    up: string;
-    right: string;
-    down: string;
-    left: string;
+    up?: string;
+    right?: string;
+    down?: string;
+    left?: string;
   };
   fontSize?: string;
 }
@@ -37,6 +41,7 @@ export default function ButtonComponent(props: IButtonProps) {
     props;
 
   const Button = styled.button`
+    display: ${props.display};
     padding: ${padding?.up} ${padding?.right} ${padding?.down} ${padding?.left};
     margin: ${margin?.up} ${margin?.right} ${margin?.down} ${margin?.left};
     height: ${height};
@@ -46,11 +51,14 @@ export default function ButtonComponent(props: IButtonProps) {
     border-radius: 5px;
     border: 1px solid ${theme.colors.primary};
     color: ${color?.from};
-    width: ${width};
+    width: ${width?.from};
     background-color: ${backgourndColor?.from};
     :hover {
       background-color: ${backgourndColor?.to};
       color: ${color?.to};
+    }
+    @media (max-width: 575.98px) {
+      width: ${width?.to};
     }
   `;
 

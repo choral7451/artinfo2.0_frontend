@@ -5,7 +5,6 @@ import theme from "../../../../../../styles/theme";
 import Select from "../../select/Select";
 import ButtonComponent from "../../buttons";
 
-interface IBoardBody {}
 interface IHeaderColumn {
   width: { mobile?: string; pc: string };
   mobileDisplay?: string;
@@ -31,19 +30,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const AddMoreBtn = styled.div`
-  background-color: ${theme.colors.primary};
-  cursor: pointer;
-  padding: 10px 0;
-  margin-top: 50px;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 5px;
-  color: white;
-  width: 100%;
-  font-weight: bold;
-`;
-
 const BoardUntilWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -63,7 +49,8 @@ const BoardUntilWrapperForMobile = styled.div`
   width: 100%;
 
   @media (max-width: 575.98px) {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     justify-content: space-around;
   }
 `;
@@ -96,11 +83,11 @@ function BodyColumn(props: IHeaderColumn) {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${width.pc};
+    width: ${width?.pc};
     padding: 10px 20px;
     font-size: ${theme.fontSize(16)};
     @media (max-width: 575.98px) {
-      width: ${width.mobile};
+      width: ${width?.mobile};
       text-align: center;
       display: ${mobileDisplay};
       font-size: ${theme.fontSize(12)};
@@ -133,8 +120,8 @@ function Body(props: IBodyColumn) {
       return (
         <BodyColumn
           key={uuidv4()}
-          width={headerData[idx].width}
-          mobileDisplay={headerData[idx].mobileDisplay}
+          width={headerData[idx]?.width}
+          mobileDisplay={headerData[idx]?.mobileDisplay}
           text={el}
         />
       );
@@ -145,7 +132,13 @@ function Body(props: IBodyColumn) {
   return <BodyWrapper>{bodyElement}</BodyWrapper>;
 }
 
-function BoardBody(props: IBoardBody) {
+interface IBoardBody {
+  headerData?: IHeaderColumn;
+  bodyData?: IBodyColumn;
+  dropdown?: string[];
+}
+
+function BoardBody(props: any) {
   const Header = styled.div`
     width: 100%;
     display: flex;
@@ -153,44 +146,7 @@ function BoardBody(props: IBoardBody) {
     border-bottom: 2px solid ${theme.colors.primary};
   `;
 
-  const headerData = [
-    { width: { pc: "5%" }, mobileDisplay: "none", text: "번호" },
-    {
-      width: { pc: "20%" },
-      mobileDisplay: "none",
-      text: "단체명",
-    },
-    {
-      width: { pc: "45%", mobile: "60%" },
-      mobileDisplay: "initial",
-      text: "제목",
-    },
-    { width: { pc: "10%" }, mobileDisplay: "none", text: "조회수" },
-    {
-      width: { pc: "20%", mobile: "40%" },
-      mobileDisplay: "initial",
-      text: "등록일",
-    },
-  ];
-
-  const bodyData = [
-    [
-      "1",
-      "국립합창단",
-      "국립합창단 제 5차 정규직 직원 모집",
-      "5",
-      "2022-09-20",
-    ],
-    [
-      "1",
-      "국립합창단",
-      "국립합창단 제 5차 정규직 직원 모집",
-      "5",
-      "2022-09-20",
-    ],
-  ];
-
-  const headerElement = headerData.map((el) => {
+  const headerElement = props.headerData?.map((el: IHeaderColumn) => {
     return (
       <HeaderColumn
         key={uuidv4()}
@@ -204,23 +160,23 @@ function BoardBody(props: IBoardBody) {
   return (
     <Wrapper>
       <BoardUntilWrapper>
-        <Search />
+        <Search display={props.search} />
         <BoardUntilWrapperForMobile>
           <Select elementArr={["전체", "예술단체", "종교", "기타"]} />
           <ButtonComponent
             text={"글쓰기"}
-            width={"100px"}
+            width={{ from: "100px" }}
             padding={{ up: "0", right: "0", down: "0", left: "0" }}
-            color={{ from: "white" }}
+            color={{ from: "white", to: "black" }}
             fontSize={"14px"}
-            backgourndColor={{ from: theme.colors.primary }}
+            backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
+            display={props.write}
           />
         </BoardUntilWrapperForMobile>
       </BoardUntilWrapper>
       <Header>{headerElement}</Header>
-      <Body headerData={headerData} bodyData={bodyData} />
-      <AddMoreBtn>더 보기</AddMoreBtn>
+      <Body headerData={props.headerData} bodyData={props.bodyData} />
     </Wrapper>
   );
 }
