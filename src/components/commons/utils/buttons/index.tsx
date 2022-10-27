@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import theme from "../../../../../styles/theme";
 
 export interface IButtonProps {
-  display: string;
-  text: string;
+  display?: string;
+  text?: string;
   push?: string;
   color?: {
     from: string;

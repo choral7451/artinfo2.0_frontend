@@ -6,7 +6,7 @@ import { recruitBodyData, recruitHeaderData } from "../share/Share.setting";
 import ButtonComponent from "../../commons/utils/buttons";
 import theme from "../../../../styles/theme";
 
-function EducationPresenter(props) {
+function EducationPresenter() {
   return (
     <S.Wrapper>
       <S.Title>교육</S.Title>
