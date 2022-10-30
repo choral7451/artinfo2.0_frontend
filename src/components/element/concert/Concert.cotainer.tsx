@@ -1,7 +1,7 @@
 import React from "react";
 import ConcertPresenter from "./Concert.presenter";
 
-function ConcertCotainer(props) {
+function ConcertCotainer() {
   return <ConcertPresenter />;
 }
 

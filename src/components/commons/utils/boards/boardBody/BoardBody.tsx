@@ -9,6 +9,7 @@ interface IHeaderColumn {
   width: { mobile?: string; pc: string };
   mobileDisplay?: string;
   text: string;
+  display?: string;
 }
 interface IBodyColumn {
   bodyData: string[][];
@@ -18,28 +19,6 @@ interface IBodyColumn {
     mobileDisplay?: string;
   }[];
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  @media (max-width: 575.98px) {
-    width: 100%;
-  }
-`;
-
-const BoardUntilWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-  @media (max-width: 575.98px) {
-    flex-direction: column;
-  }
-`;
 
 const BoardUntilWrapperForMobile = styled.div`
   height: 40px;
@@ -115,8 +94,8 @@ function Body(props: IBodyColumn) {
     width: 100%;
   `;
 
-  const bodyElement = bodyData.map((el) => {
-    const row = el.map((el, idx) => {
+  const bodyElement = bodyData?.map((el) => {
+    const row = el?.map((el, idx) => {
       return (
         <BodyColumn
           key={uuidv4()}
@@ -139,9 +118,21 @@ interface IBoardBody {
 }
 
 function BoardBody(props: any) {
+  const width = "70%";
+  const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: ${props.width ? props.width : width};
+    @media (max-width: 575.98px) {
+      width: 100%;
+    }
+  `;
+
   const Header = styled.div`
     width: 100%;
-    display: flex;
+    display: ${props.headerDisplay ? props.headerDisplay : "flex"};
     border-top: 2px solid ${theme.colors.primary};
     border-bottom: 2px solid ${theme.colors.primary};
   `;
@@ -156,6 +147,17 @@ function BoardBody(props: any) {
       />
     );
   });
+
+  const BoardUntilWrapper = styled.div`
+    display: ${props.boardUtil ? props.boardUtil : "flex"};
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+    }
+  `;
 
   return (
     <Wrapper>

@@ -22,3 +22,11 @@ export const Title = styled.div`
     padding-top: 40px;
   }
 `;
+
+export const ConcertWrapper = styled.div`
+  text-align: center;
+  width: 80%;
+  @media (max-width: 575.98px) {
+    width: 90%;
+  }
+`;

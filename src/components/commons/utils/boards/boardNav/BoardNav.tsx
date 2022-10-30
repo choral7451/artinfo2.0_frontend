@@ -91,14 +91,17 @@ export default function BoardNav(props: IBoardNav) {
   });
 
   return (
-    <Wrapper>
-      <Arrow>
-        <SwapLeftOutlined />
-        <SwapRightOutlined />
-      </Arrow>
-      <Frame>
-        <NavAll>{navArr}</NavAll>
-      </Frame>
-    </Wrapper>
+    <>
+      {" "}
+      <Wrapper>
+        <Arrow>
+          <SwapLeftOutlined />
+          <SwapRightOutlined />
+        </Arrow>
+        <Frame>
+          <NavAll>{navArr}</NavAll>
+        </Frame>
+      </Wrapper>
+    </>
   );
 }

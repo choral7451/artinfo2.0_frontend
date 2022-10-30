@@ -15,6 +15,12 @@ const Input = styled.input`
   :focus {
     outline: none;
   }
+  ::placeholder {
+    transition: all 0.3s ease-in-out;
+  }
+  :focus::placeholder {
+    color: transparent;
+  }
 `;
 
 function Search(props: any) {
@@ -26,6 +32,7 @@ function Search(props: any) {
     border: 1px solid ${theme.colors.primary};
     padding: 10px 40px 10px 30px;
     border-radius: 20px;
+
     @media (max-width: 575.98px) {
       width: fit-content;
     }
