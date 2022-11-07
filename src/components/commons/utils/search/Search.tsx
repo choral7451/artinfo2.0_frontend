@@ -23,16 +23,15 @@ const Input = styled.input`
   }
 `;
 
-function Search(props: any) {
+function Search() {
   const Wrapper = styled.form`
-    display: ${props.display};
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 300px;
     border: 1px solid ${theme.colors.primary};
     padding: 10px 40px 10px 30px;
     border-radius: 20px;
-
     @media (max-width: 575.98px) {
       width: fit-content;
     }

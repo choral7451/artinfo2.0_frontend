@@ -1,7 +1,7 @@
 import React from "react";
 import EducationPresenter from "./Education.presenter";
 
-function EducationContainer(props) {
+function EducationContainer() {
   return <EducationPresenter />;
 }
 

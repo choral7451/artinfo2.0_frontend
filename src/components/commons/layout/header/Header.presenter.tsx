@@ -1,6 +1,6 @@
 import * as S from "./Header.styles";
 import { IHeaderUI } from "./Header.types";
-import ButtonComponent from "../../utils/buttons";
+import ButtonComponent from "../../utils/buttons/Button";
 import AnchorComponent from "../../utils/anchor";
 
 export default function HeaderUI(props: IHeaderUI) {

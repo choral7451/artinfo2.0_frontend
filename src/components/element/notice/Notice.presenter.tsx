@@ -1,21 +1,15 @@
 import React from "react";
 import * as S from "../recruit/Recruit.styles";
-import BoardNav from "../../commons/utils/boards/boardNav/BoardNav";
-import BoardBody from "../../commons/utils/boards/boardBody/BoardBody";
-import { recruitBodyData, recruitHeaderData } from "./Notice.setting";
-import ButtonComponent from "../../commons/utils/buttons";
+import Board from "../../commons/utils/boards/Board";
+import { noticeBodyData, noticeHeaderData } from "./Notice.setting";
+import ButtonComponent from "../../commons/utils/buttons/Button";
 import theme from "../../../../styles/theme";
 
 function NoticePresenter() {
   return (
     <S.Wrapper>
       <S.Title>공지</S.Title>
-      <BoardBody
-        headerData={recruitHeaderData}
-        bodyData={recruitBodyData}
-        write={"none"}
-        search={"none"}
-      />
+      <Board columnSetting={noticeHeaderData} bodyData={noticeBodyData} />
       <ButtonComponent
         text={"더보기"}
         color={{ from: "white", to: "black" }}

@@ -1,8 +1,8 @@
 import Poster from "../../commons/utils/cards/poster/Poster";
 import * as S from "./Home.styles";
 import Banner from "../../commons/utils/banner/Banner";
-import BoardBody from "../../commons/utils/boards/boardBody/BoardBody";
-import { HomeBoardLeftHeader, HomeBoardLeftBody } from "./Home.setting";
+import Board from "../../commons/utils/boards/Board";
+import { HomeBoardLeftBody, columnSetting } from "./Home.setting";
 import { IHomePresenter } from "./Home.types";
 
 function HomePresenter(props: IHomePresenter) {
@@ -30,14 +30,10 @@ function HomePresenter(props: IHomePresenter) {
             채용 정보 🚀
           </S.BoardTitle>
           <S.BoardElement>
-            <BoardBody
-              headerData={HomeBoardLeftHeader}
+            <Board
+              columnSetting={columnSetting}
               bodyData={HomeBoardLeftBody}
-              headerDisplay={"none"}
-              boardUtil={"none"}
-              write={"none"}
-              search={"none"}
-              width={"100%"}
+              boadrStyle={{ width: "100%" }}
             />
           </S.BoardElement>
         </S.Board>
@@ -46,14 +42,10 @@ function HomePresenter(props: IHomePresenter) {
             나눔 💬
           </S.BoardTitle>
           <S.BoardElement>
-            <BoardBody
-              headerData={HomeBoardLeftHeader}
+            <Board
+              columnSetting={columnSetting}
               bodyData={HomeBoardLeftBody}
-              headerDisplay={"none"}
-              boardUtil={"none"}
-              write={"none"}
-              search={"none"}
-              width={"100%"}
+              boadrStyle={{ width: "100%" }}
             />
           </S.BoardElement>
         </S.Board>

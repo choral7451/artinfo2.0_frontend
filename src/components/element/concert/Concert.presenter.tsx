@@ -1,9 +1,11 @@
 import React from "react";
 import * as S from "./Concert.styles";
 import BoardNav from "../../commons/utils/boards/boardNav/BoardNav";
-import ButtonComponent from "../../commons/utils/buttons";
+import ButtonComponent from "../../commons/utils/buttons/Button";
 import theme from "../../../../styles/theme";
 import Poster from "../../commons/utils/cards/poster/Poster";
+import Search from "../../commons/utils/search/Search";
+import Select from "../../commons/utils/select/Select";
 
 function ConcertPresenter() {
   return (
@@ -12,7 +14,30 @@ function ConcertPresenter() {
       <BoardNav
         nav={["전체", "오케스트라", "합창", "앙상블", "솔로", "기타"]}
       />
-
+      <S.BoardToolWapper>
+        <Search />
+        <S.BoardMobileNavAndWriterWapper>
+          <Select
+            elementArr={[
+              "전체",
+              "오케스트라",
+              "합창",
+              "앙상블",
+              "솔로",
+              "기타",
+            ]}
+          />
+          <ButtonComponent
+            text={"글쓰기"}
+            width={{ from: "100px" }}
+            padding={{ up: "0", right: "0", down: "0", left: "0" }}
+            color={{ from: "white", to: "black" }}
+            fontSize={"14px"}
+            backgourndColor={{ from: theme.colors.primary, to: "white" }}
+            height={"100%"}
+          />
+        </S.BoardMobileNavAndWriterWapper>
+      </S.BoardToolWapper>
       <S.ConcertWrapper>
         <Poster />
         <Poster />

@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import { IButtonProps } from "../../utils/buttons";
+import { IButtonProps } from "../../utils/buttons/Button";
 
 interface IUser {
   name: string;

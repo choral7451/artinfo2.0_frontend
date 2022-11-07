@@ -1,6 +1,6 @@
 import { from } from "@apollo/client";
 import AnchorComponent from "../../commons/utils/anchor";
-import ButtonComponent from "../../commons/utils/buttons";
+import ButtonComponent from "../../commons/utils/buttons/Button";
 import * as S from "./Login.styles";
 import theme from "../../../../styles/theme";
 
