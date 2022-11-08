@@ -35,6 +35,7 @@ function ConcertPresenter() {
             fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
+            push={"/concert/write"}
           />
         </S.BoardMobileNavAndWriterWapper>
       </S.BoardToolWapper>

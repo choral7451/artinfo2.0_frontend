@@ -27,8 +27,8 @@ function HeaderColumn(props: IBoardColumn) {
 }
 
 function BoardHeader(props: IBoardHeader) {
-  const { setting } = props;
-  const headerResult = setting?.settingValue?.map((el) => {
+  const { columnSetting } = props;
+  const headerResult = columnSetting?.settingValue?.map((el) => {
     return (
       <HeaderColumn
         key={uuidv4()}
@@ -41,8 +41,8 @@ function BoardHeader(props: IBoardHeader) {
 
   const Header = styled.div`
     width: 100%;
-    display: ${setting?.columnTitleDisplay
-      ? setting.columnTitleDisplay
+    display: ${columnSetting?.columnTitleDisplay
+      ? columnSetting.columnTitleDisplay
       : "flex"};
     border-top: 2px solid ${theme.colors.primary};
     border-bottom: 2px solid ${theme.colors.primary};

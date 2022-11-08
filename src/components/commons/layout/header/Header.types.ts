@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import { IButtonProps } from "../../utils/buttons/Button";
 
 interface IUser {
