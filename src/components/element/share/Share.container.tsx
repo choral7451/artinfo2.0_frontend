@@ -1,7 +1,7 @@
 import React from "react";
 import SharePresenter from "./Share.presenter";
 
-function ShareContainer(props) {
+function ShareContainer() {
   return <SharePresenter />;
 }
 

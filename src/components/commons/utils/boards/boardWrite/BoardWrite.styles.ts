@@ -1,24 +1,58 @@
 import styled from "@emotion/styled";
-import theme from "../../../../../styles/theme";
 import DatePickenpm from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { TimePicker } from "antd";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import theme from "../../../../../../styles/theme";
 
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
 });
-
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+`;
+export const BoardWriteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   border: 1px solid ${theme.colors.primary};
   padding: 30px 0;
   margin: 70px 0;
+`;
+
+export const Title = styled.div`
+  padding-top: 80px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  @media (max-width: 575.98px) {
+    padding-top: 40px;
+  }
+`;
+
+export const SelectWrapper = styled.div`
+  height: 40px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const SelectLabel = styled.div`
+  border: 1px solid ${theme.colors.primary};
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 35px;
+  margin-right: 20px;
 `;
 
 export const TitleInput = styled.input`
@@ -96,6 +130,51 @@ export const TimePick = styled(TimePicker)`
   border: 1px solid ${theme.colors.primary};
   text-align: center;
   cursor: pointer;
+`;
+
+export const ImageWrapper = styled.div`
+  width: 90%;
+  display: flex;
+  padding: 40px 10px 0 10px;
+`;
+
+export const ImageInputLabel = styled.label`
+  font-size: 20px;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: ${theme.colors.primary};
+`;
+
+export const ImageInputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-left: 5%;
+  border-bottom: 2px solid ${theme.colors.primary};
+  :hover {
+    background-color: ${theme.colors.primary};
+    border-radius: 5px;
+  }
+`;
+
+export const ImageInputText = styled.div`
+  position: absolute;
+  font-size: 18px;
+`;
+
+export const ImageInput = styled.input`
+  padding: 0.5em 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
 `;
 
 export const TextArea = styled(ReactQuill)`

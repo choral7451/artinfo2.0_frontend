@@ -5,10 +5,14 @@ import { useState } from "react";
 
 interface ISelect {
   elementArr: string[];
+  elementAll?: boolean;
+  display: { pc: string; mobile: string };
 }
 
 function Select(props: ISelect) {
-  const [nav, setNav] = useState("전체");
+  let navInital = "전체";
+  if (!props.elementAll) navInital = props.elementArr[0];
+  const [nav, setNav] = useState(navInital);
   const [dropDown, setDropDown] = useState("hidden");
 
   const onClick = (navSelect: string) => () => {
@@ -29,13 +33,13 @@ function Select(props: ISelect) {
     overflow: ${dropDown};
     border-radius: 5px;
     width: 100px;
-    display: none;
+    display: ${props.display.pc};
     z-index: 1;
     :hover {
       cursor: pointer;
     }
     @media (max-width: 575.98px) {
-      display: initial;
+      display: ${props.display.mobile};
     }
   `;
 

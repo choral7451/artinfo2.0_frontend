@@ -15,7 +15,10 @@ export default function RecruitPresenter() {
       <S.BoardToolWapper>
         <Search />
         <S.BoardMobileNavAndWriterWapper>
-          <Select elementArr={["전체", "예술단체", "종교", "기타"]} />
+          <Select
+            elementArr={["전체", "예술단체", "종교", "기타"]}
+            display={{ pc: "none", mobile: "initial" }}
+          />
           <ButtonComponent
             text={"글쓰기"}
             width={{ from: "100px" }}
@@ -24,6 +27,7 @@ export default function RecruitPresenter() {
             fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
+            push={"/recruit/write"}
           />
         </S.BoardMobileNavAndWriterWapper>
       </S.BoardToolWapper>

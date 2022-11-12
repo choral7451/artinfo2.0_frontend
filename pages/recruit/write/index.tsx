@@ -3,8 +3,9 @@ import BoardWriteContainer from "../../../src/components/commons/utils/boards/bo
 function Index() {
   return (
     <BoardWriteContainer
-      title={"공연"}
-      category={["오케스트라", "합창", "앙상블", "솔로", "기타"]}
+      title={"채용"}
+      category={["예술단체", "종교", "기타"]}
+      imageDisplay={"none"}
     />
   );
 }

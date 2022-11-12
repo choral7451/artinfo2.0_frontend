@@ -16,7 +16,10 @@ function SharePresenter() {
       <S.BoardToolWapper>
         <Search />
         <S.BoardMobileNavAndWriterWapper>
-          <Select elementArr={["전체", "이슈", "후기", "자유게시판"]} />
+          <Select
+            elementArr={["전체", "이슈", "후기", "자유게시판"]}
+            display={{ pc: "none", mobile: "initial" }}
+          />
           <ButtonComponent
             text={"글쓰기"}
             width={{ from: "100px" }}
@@ -25,6 +28,7 @@ function SharePresenter() {
             fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
+            push={"/share/write"}
           />
         </S.BoardMobileNavAndWriterWapper>
       </S.BoardToolWapper>

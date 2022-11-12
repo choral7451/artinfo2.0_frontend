@@ -26,6 +26,8 @@ function ConcertPresenter() {
               "솔로",
               "기타",
             ]}
+            elementAll={false}
+            display={{ pc: "none", mobile: "initial" }}
           />
           <ButtonComponent
             text={"글쓰기"}
