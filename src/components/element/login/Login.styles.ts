@@ -33,7 +33,7 @@ export const InputWrapper = styled.div`
   align-items: center;
   height: 50px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #a1b4cf;
   margin: 15px 0;
 `;
@@ -63,7 +63,7 @@ export const SocialBtn = styled.div`
   cursor: pointer;
   font-size: 16px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   box-shadow: rgb(228 228 228) 0px 1px 1px 1px;
   margin: 20px 0;

@@ -31,6 +31,7 @@ export default function LoginPresenter() {
           fontSize="16px"
         />
       </S.LoginForm>
+
       <S.SocialBtn
         style={{ backgroundColor: "rgb(3, 199, 90)", color: "white" }}
       >

@@ -136,6 +136,7 @@ export const ImageWrapper = styled.div`
   width: 90%;
   display: flex;
   padding: 40px 10px 0 10px;
+  margin-bottom: 50px;
 `;
 
 export const ImageInputLabel = styled.label`
@@ -178,7 +179,7 @@ export const ImageInput = styled.input`
 `;
 
 export const TextArea = styled(ReactQuill)`
-  margin: 50px 0;
+  margin-bottom: 50px;
   height: 500px;
   width: 90%;
 `;

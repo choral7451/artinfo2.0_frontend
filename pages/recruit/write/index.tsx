@@ -5,7 +5,7 @@ function Index() {
     <BoardWriteContainer
       title={"채용"}
       category={["예술단체", "종교", "기타"]}
-      imageDisplay={"none"}
+      concertDisplay={"none"}
     />
   );
 }

@@ -26,7 +26,7 @@ function BoardWriteContainer(props: IBoardWriteContainer) {
       imageTitle={imageTitle}
       title={props.title}
       category={props.category}
-      imageDisplay={props.imageDisplay}
+      concertDisplay={props.concertDisplay}
     />
   );
 }

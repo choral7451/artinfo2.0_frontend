@@ -5,7 +5,7 @@ function Index() {
     <BoardWriteContainer
       title={"나눔"}
       category={["이슈", "후기", "자유게시판"]}
-      imageDisplay={"none"}
+      concertDisplay={"none"}
     />
   );
 }

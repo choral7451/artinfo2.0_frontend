@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../recruit/Recruit.styles";
+import * as S from "./Share.styles";
 import BoardNav from "../../commons/utils/boards/boardNav/BoardNav";
 import Board from "../../commons/utils/boards/Board";
 import ButtonComponent from "../../commons/utils/buttons/Button";

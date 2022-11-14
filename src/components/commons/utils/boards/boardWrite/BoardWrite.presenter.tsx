@@ -4,11 +4,7 @@ import { modules } from "./BoardWrite.setting";
 import ButtonComponent from "../../buttons/Button";
 import theme from "../../../../../../styles/theme";
 import Select from "../../select/Select";
-import {
-  BoardWriteWrapper,
-  ImageInputWrapper,
-  SelectLabel,
-} from "./BoardWrite.styles";
+import { ImageInputWrapper } from "./BoardWrite.styles";
 
 function BoardWritePresenter(props: any) {
   return (
@@ -24,7 +20,7 @@ function BoardWritePresenter(props: any) {
           />
         </S.SelectWrapper>
         <S.TitleInput placeholder="제목을 입력해주세요." />
-        <S.InfoWrapper>
+        <S.InfoWrapper style={{ display: props.concertDisplay }}>
           <S.InfoElementWrapper>
             <S.InfoTitle>장소</S.InfoTitle>
             <S.InfoInput placeholder={"장소를 입력해주세요."} />
@@ -43,7 +39,7 @@ function BoardWritePresenter(props: any) {
             </S.PickWrapper>
           </S.InfoElementWrapper>
         </S.InfoWrapper>
-        <S.ImageWrapper style={{ display: props.imageDisplay }}>
+        <S.ImageWrapper style={{ display: props.concertDisplay }}>
           <S.ImageInputLabel>포스터</S.ImageInputLabel>
           <ImageInputWrapper>
             <S.ImageInputText>{props.imageTitle}</S.ImageInputText>
