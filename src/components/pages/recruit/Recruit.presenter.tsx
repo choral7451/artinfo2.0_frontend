@@ -27,7 +27,7 @@ export default function RecruitPresenter() {
             fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
-            push={"/recruit/write"}
+            onPush={"/recruit/write"}
           />
         </S.BoardMobileNavAndWriterWapper>
       </S.BoardToolWapper>

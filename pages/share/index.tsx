@@ -1,4 +1,4 @@
-import ShareContainer from "../../src/components/element/share/Share.container";
+import ShareContainer from "../../src/components/pages/share/Share.container";
 
 export default function index() {
   return <ShareContainer />;

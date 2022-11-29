@@ -3,7 +3,7 @@ import Input from "../../commons/utils/input/Input";
 import ButtonComponent from "../../commons/utils/buttons/Button";
 import theme from "../../../../styles/theme";
 
-function SignupPresenter() {
+function SignupPresenter(props: any) {
   return (
     <S.Wrapper>
       <S.Title>회원가입</S.Title>
@@ -17,11 +17,12 @@ function SignupPresenter() {
           fontSize={"12px"}
           backgourndColor={{ from: "white", to: theme.colors.primary }}
           height={"100%"}
+          onClick={props.onClickSendEmailToken}
         />
       </S.InputWrapper>
       <S.InputWrapper>
         <Input width={"70%"} placeholder={"인증번호를 입력해주세요."} />
-        <S.Count>180</S.Count>
+        <S.Count>{props.timerTime}</S.Count>
         <ButtonComponent
           text={"인증"}
           width={{ from: "11%" }}

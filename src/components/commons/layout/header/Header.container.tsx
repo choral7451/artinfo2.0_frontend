@@ -17,7 +17,7 @@ export default function Header() {
   const btnValue = {
     login: {
       text: "로그인",
-      push: "/login",
+      onPush: "/login",
       backgourndColor: { from: "white", to: theme.colors.primary },
       color: { from: "black", to: "white" },
       margin: { up: "0", right: "15px", down: "0", left: "15px" },
@@ -25,7 +25,7 @@ export default function Header() {
     },
     signup: {
       text: "회원가입",
-      push: "/signup",
+      onPush: "/signup",
       backgourndColor: { from: theme.colors.primary, to: "white" },
       color: { from: "white", to: "black" },
       margin: { up: "0", right: "15px", down: "0", left: "15px" },

@@ -1,5 +1,5 @@
 import React from "react";
-import EducationContainer from "../../src/components/element/education/Education.container";
+import EducationContainer from "../../src/components/pages/education/Education.container";
 
 function Index() {
   return <EducationContainer />;

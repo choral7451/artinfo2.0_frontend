@@ -49,7 +49,7 @@ export const modules = {
         },
         { background: [] },
       ],
-      ["clean"],
+      ["link", "image"],
     ],
   },
 };

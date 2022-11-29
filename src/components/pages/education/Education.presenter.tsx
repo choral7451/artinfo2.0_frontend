@@ -29,7 +29,7 @@ function EducationPresenter() {
             fontSize={"14px"}
             backgourndColor={{ from: theme.colors.primary, to: "white" }}
             height={"100%"}
-            push={"/education/write"}
+            onPush={"/education/write"}
           />
         </S.BoardMobileNavAndWriterWapper>
       </S.BoardToolWapper>

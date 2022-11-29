@@ -5,7 +5,8 @@ import theme from "../../../../../styles/theme";
 export interface IButtonProps {
   display?: string;
   text?: string;
-  push?: string;
+  onPush?: string;
+  onClick?: string;
   color?: {
     from: string;
     to?: string;
@@ -68,7 +69,9 @@ export default function ButtonComponent(props: IButtonProps) {
 
   return (
     <>
-      <Button onClick={props.push ? onClickPush(`${props.push}`) : undefined}>
+      <Button
+        onClick={props.onPush ? onClickPush(props.onPush) : props.onClick}
+      >
         {props.text}
       </Button>
     </>

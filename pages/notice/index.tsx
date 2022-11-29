@@ -1,5 +1,5 @@
 import React from "react";
-import NoticeContianer from "../../src/components/element/notice/Notice.contianer";
+import NoticeContianer from "../../src/components/pages/notice/Notice.contianer";
 
 function Index() {
   return <NoticeContianer />;
